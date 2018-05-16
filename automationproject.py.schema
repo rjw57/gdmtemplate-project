@@ -1,0 +1,38 @@
+info:
+  title: Automation Project
+  author: UIS Automation Team
+  description: >
+    Deploys a project pre-configured with the usual set of APIs enabled and
+    grant the Owner role to admins.
+
+imports:
+- path: project.py
+
+required:
+- project-id
+- billing-account-name
+- project-name
+- parent-folder-id
+
+additionalProperties: false
+properties:
+  project-id:
+    description: >
+      Configures the project ID.
+    type: string
+  project-name:
+    description: >
+      Configures the project to have a human-readable name that is different
+      from the project ID.
+    type: string
+  parent-folder-id:
+    description: >
+      The ID of the parent folder that the projects will be under. Typically a
+      base-10 string representation of integer.
+    type: string
+    pattern: ^[0-9]{8,25}$
+  billing-account-name:
+    description: >
+      The ID of the billing account to attach to the projects.
+    type: string
+    pattern: ^billingAccounts/[a-zA-Z0-9]([-a-zA-Z0-9]+[-a-zA-Z0-9]$)?
