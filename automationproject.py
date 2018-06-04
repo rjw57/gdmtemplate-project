@@ -24,6 +24,7 @@ APIS = [
     'sqladmin.googleapis.com',
     'iam.googleapis.com',
     'cloudkms.googleapis.com',
+    'cloudresourcemanager.googleapis.com',
 ]
 
 
