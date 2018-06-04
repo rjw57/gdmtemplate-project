@@ -23,6 +23,7 @@ APIS = [
     'logging.googleapis.com',
     'sqladmin.googleapis.com',
     'iam.googleapis.com',
+    'cloudkms.googleapis.com',
 ]
 
 
