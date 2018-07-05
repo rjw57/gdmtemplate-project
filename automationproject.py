@@ -34,10 +34,11 @@ def GenerateConfig(context):
     iam_policy_patch = {}
 
     # Ensure ADMINS have correct roles.
-    if len(ADMINS) > 0:
+    admins = ADMINS + context.properties.get('additional-admins', [])
+    if len(admins) > 0:
         iam_policy_patch['add'] = [{
             'role': 'roles/owner',
-            'members': ADMINS,
+            'members': admins,
         }]
 
     # Remove sensitive roles from EX_ADMINS.
@@ -54,7 +55,7 @@ def GenerateConfig(context):
             'project-name': context.properties['project-name'],
             'parent-folder-id': context.properties['parent-folder-id'],
             'billing-account-name': context.properties['billing-account-name'],
-            'apis': APIS,
+            'apis': APIS + context.properties.get('additional-apis', []),
             'service-accounts': [],
             'bucket-export-settings': {
                 'create-bucket': True,

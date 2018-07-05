@@ -36,3 +36,18 @@ properties:
       The ID of the billing account to attach to the projects.
     type: string
     pattern: ^billingAccounts/[a-zA-Z0-9]([-a-zA-Z0-9]+[-a-zA-Z0-9]$)?
+  additional-apis:
+    description: >
+      An array of additional APIs to enable for the project.
+    type: array
+    items:
+      type: string
+    default: []
+  additional-admins:
+    description: >
+      An array of additional admin users for the project. See
+      automationproject.py for the format of users.
+    type: array
+    items:
+      type: string
+    default: []
