@@ -1,0 +1,14 @@
+root=true
+
+[*.{yml,yaml}]
+indent_size=2
+indent_style=space
+
+[*.py]
+indent_size=4
+indent_style=space
+max_line_length=99
+
+[*.schema]
+indent_size=2
+indent_style=space
